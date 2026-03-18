@@ -4,6 +4,8 @@ import {useState} from "react"
 import { Box } from "@mui/material";
 import "./styles/index.css";
 import { PreviousSearches } from "./gifs/PreviousSearches";
+import { mockGifs } from "./mock_gifs/gifs.mock";
+import { GifsList } from "./gifs/GifsList";
 
 function GifsApp() {
   const [previousTerms, setPreviousTerms] = useState(['one', ' two']);
@@ -28,7 +30,7 @@ function GifsApp() {
 
   return (
     <>
-      <Box component="div" className="h-screen w-full bg-gray-700">
+      <Box component="div" className="h-full w-full p-5 bg-slate-950">
         {/* header */}
         <CustomHeader
           title="Gifs Store"
@@ -39,6 +41,10 @@ function GifsApp() {
 
         {/*preciousSearches*/}
         <PreviousSearches searchList={previousTerms} onLabelClick={handleSuggestClicked}/>
+
+        {/* Gifs */}
+        <GifsList gifs={mockGifs}/>
+
       </Box>
     </>
   );

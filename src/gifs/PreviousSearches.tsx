@@ -14,11 +14,11 @@ export const PreviousSearches = ({searchList, onLabelClick}:SearchProps) =>{
                     Recent searches
                 </Typography>
                 <ul className="w-200 h-20  mx-auto flex gap-7 justify-center mt-5">
-                    {searchList.map((term:string) =>(
+                    {searchList?.map((term:string) =>(
                         (<li 
                          key={term}
                           onClick={() => onLabelClick(term)}
-                          className="bg-gray-800 text-gray-500 w-18 h-8  px-3 py-1 hover:bg-gray-500 hover:text-gray-950 hover:cursor-pointer  text-center  rounded-md">
+                          className="bg-gray-800 text-gray-500  h-8  px-3 py-1 hover:bg-gray-500 hover:text-gray-950 hover:cursor-pointer  text-center  rounded-md">
                             {term}
                         </li>)
                     ))}
