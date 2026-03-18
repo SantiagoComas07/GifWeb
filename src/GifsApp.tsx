@@ -3,13 +3,15 @@ import { SearchBar } from "./components/SearchBar";
 import {useState} from "react"
 import { Box } from "@mui/material";
 import "./styles/index.css";
+import { PreviousSearches } from "./gifs/PreviousSearches";
 
 function GifsApp() {
   const [previousTerms, setPreviousTerms] = useState(['one', ' two']);
 
-  const example = () => {
-    console.log("Hello world");
-  };
+
+  const handleSuggestClicked = (term:string) =>{
+    console.log({term})
+  }
 
   const handleSearch = (query: string = '') => {
     // Validate the query
@@ -19,7 +21,7 @@ function GifsApp() {
     // Avoid duplicate searches
     if(previousTerms.includes(query)) return;
     // Update preciousTerms
-    const currentTerms= previousTerms.slice(0,6)
+    const currentTerms= previousTerms.slice(0,8)
     currentTerms.unshift(query);
     setPreviousTerms(currentTerms)
   }
@@ -34,6 +36,9 @@ function GifsApp() {
         />
         {/* searchBar */}
         <SearchBar placeholderP="Write here" onQuery={handleSearch} />
+
+        {/*preciousSearches*/}
+        <PreviousSearches searchList={previousTerms} onLabelClick={handleSuggestClicked}/>
       </Box>
     </>
   );
