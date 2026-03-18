@@ -2,7 +2,6 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import {theme} from './config/theme.config.ts'
 import {ThemeProvider} from '@mui/material/styles'
-import './index.css'
 import GifsApp from './GifsApp.tsx'
 
 createRoot(document.getElementById('root')!).render(

@@ -1,13 +1,18 @@
 import {createTheme} from "@mui/material/styles"
+import '@fontsource/arimo/700.css';
 
 export const theme =createTheme({
     palette:{
+    
         primary: {
             main:"#16171d",
         },
         secondary:{
             main: "#2e303a",
         }
+    },
+    typography:{
+        fontFamily: 'Arimo, sans-serif',
     }
 })
 
