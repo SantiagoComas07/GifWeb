@@ -33,7 +33,11 @@ export const SearchBar = ({placeholderP, onQuery}: SearchProps) => {
             <TextField 
             type="text"
             variant='outlined'
-            className="py-1 px-2 bg-gray-600 rounded-sm"
+            className="py-1 px-2  rounded-sm bg-gray-700"
+            sx={{
+                "& .MuiInputBase-input": {
+                 color: "#ffffff", 
+                },}}
             placeholder={placeholderP}
             value = {query}
             onChange= {(event) => setQuery(event.target.value)}
